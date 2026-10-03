@@ -72,3 +72,73 @@ print(message.count('Hello'))
 
 #count() method is case sensitive when used with strings.
 print(message.count('L'))       #This would give 0
+
+# 4.find() - used to find starting index of substring (Also case-sensitive)
+print(message.find('World'))
+
+#If we try to find a string of characters, which doesnt exist, it would return -1
+print(message.find('Universe'))
+
+# 5.replace() - used to replace some characters in our string with other characters (Also case senstitive)
+#Replace() takes 2 arguments, first one is the string we want to replace, 2nd is the one we want to replace it with.
+message.replace('World' , 'Universe')
+print(message)
+
+#This would still print, Hello World. This happens because replace() doesn't do in-place replacement.
+#replace() instead returns a new string with those values replaced.
+
+new_message = message.replace('World' , 'Universe')
+print(new_message)
+
+#If we want replacement to the original variable, instead of making a new variable. Just set the original variable.
+message = message.replace('World' , 'Universe')
+print(message)
+
+
+#String Concatenation
+greeting = 'Hello'
+name = 'Micheal'
+
+message = greeting + name
+print(message)
+
+#This would print HelloMicheal, as the strings were added but without any space between them.
+#To solve this, we add a string literal between them.
+message = greeting + ', ' + name
+print(message)
+
+#Using the + operator for string concatenation is fine, for smaller and simpler strings. But for a larger and more complicated one.
+message = greeting + ', ' + name + '. Welcome!' 
+
+#For strings like these, it's better to use a string formatting.
+
+
+#String Formatting
+#String Formatting allos you to write the message as it will appear and put placeholders in place of variables.
+message = '{}, {}. Welcome!'.format(greeting, name)
+print(message)
+
+#{} acts as the placeholder for string formatting.
+
+
+#f-strings
+#Introduced in python 3.6 and above, we have access to f-strings.
+#Idea behind f-strings is to make string formatting as simple as possible.
+message = f'{greeting} , {name}. Welcome!'
+
+#f-strings allow you to write code within the placeholder. So if you wanted the name to be upper case.
+message = f'{greeting} , {name.upper()}. Welcome!'
+print(message)
+
+
+#Built-in Documentation
+#using the dir() function, and passing a variable name as an arg.
+print(dir(name))
+
+#This prints all the attirbutes, methods we have access to with that variable.
+#To get more info, about string methods, we can use help() function
+#To use help() function, we use the string class instead of the variable name.
+print(help(str))
+
+#We can also pass a certain method directly into the help() function.
+print(help(str.lower))
