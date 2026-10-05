@@ -78,3 +78,45 @@ print(round(3.5))
 print(round(4.5))
 
 #If the digit, before the decimal, is odd. The result is rounded up. And if the digit is even, the result is rounded down
+
+
+##Comparison Operators
+#The result of these operators, return a boolean value, which is True/False values
+num_1 = 3
+num_2 = 2
+
+# 1.Check if Equal
+print(num_1 == num_2)
+
+# 2. Check if Not Equal
+print(num_1 != num_2)
+
+# 3.Check if Greater than
+print(num_1 > num_2)
+
+# 4.Check if Less than
+print(num_1 < num_2)
+
+# 5.Check if Greater than or Equal to
+print(num_1 >= num_2)        #num_1 => num_2 is invalid syntax
+
+# 6.Check if Less than or Equal to
+print(num_1 <= num_2)
+
+
+##Type Casting
+#It's possible we might run into data might seem like it is of a particular data type (let's say integer), 
+#but turns out to be another data type (say string).
+num_1 = '100'
+num_2 = '200'
+
+#If we add them together, assuming a numerical output, we will be surprised as the strings would simply concatenate.
+print(num_1 + num_2)
+
+#To resolve this, we simply use casting, to turn the data into integers
+num_1 = int(num_1)
+num_2 = int(num_2)
+
+print(type(num_1)), print (type(num_2))
+
+print(num_1 + num_2)
