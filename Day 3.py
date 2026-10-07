@@ -32,3 +32,24 @@ print(cources)
 #first is the index where we want to insert, followed by the value itself.
 cources.insert(0, 'Art')
 print(cources)
+
+# 3.Extend() - use extend() when you wanted to add another list into a list.
+#Let's say you had another list, you wanted to add to your original list
+cources_2 = ['Art', 'Education']
+
+#If we try to use insert or append, this would add ['Art', 'Education'] to the original list, not the values.
+cources.insert(0, cources_2)
+cources.append(cources_2)
+print(cources)
+#We have a list within a list.
+
+cources.extend(cources_2)
+#This adds the individual values of cources_2 at the last of original list.
+
+# 4.Remove() - used to remove items from lists.
+cources.remove('Math')
+
+# 5.Pop() - by default, removes last element, Useful if we want o use list as stack or queue
+#pop() returns the value it removes, so we can grab that returned value
+popped = cources.pop()
+print(popped)
