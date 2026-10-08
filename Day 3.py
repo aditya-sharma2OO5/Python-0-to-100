@@ -38,9 +38,9 @@ print(cources)
 cources_2 = ['Art', 'Education']
 
 #If we try to use insert or append, this would add ['Art', 'Education'] to the original list, not the values.
-cources.insert(0, cources_2)
-cources.append(cources_2)
-print(cources)
+#cources.insert(0, cources_2)
+#cources.append(cources_2)
+#print(cources)
 #We have a list within a list.
 
 cources.extend(cources_2)
@@ -53,3 +53,42 @@ cources.remove('Math')
 #pop() returns the value it removes, so we can grab that returned value
 popped = cources.pop()
 print(popped)
+
+
+##Sorting Lists
+#If we wanted to sort our lists, we could do so with the help of reverse()
+cources.reverse()
+print(cources)
+
+#Sorting our list is just as easy, simply use sort()
+cources.sort()
+print(cources)
+
+#sort() arranges the list in alphabatical order, as it had text data. If the list had numerical data,
+#sort() would sort the list in ascending order.
+nums = [1,5,2,4,3]
+nums.sort()
+print(nums)
+
+#What if we wanted to sort our list in descending order, one way that would intuitively come to mind is to use 
+#reverse() on a sorted list. Which would work, but there's a easier way to do so.
+nums.sort(reverse = True)
+print(nums)
+
+#These methods alters the original list in-place. But there's a way to sort the list, 
+#without alterting our original list. What if we simply, wanted a sorted version of our nums list
+#without altering the original. We can use the sorted function.
+sorted(nums)
+print(nums)
+
+#The sorted function, doesnt sort the original list in-place, it returns a new sorted list.
+nums_sorted = sorted(nums)
+print(nums_sorted)
+
+#Useful, when you dont want to alter the original data (list)
+
+#We also have some couple of additional built-in functions to apply on our list
+print(min(nums))
+print(max(nums))
+print(sum(nums))
+
