@@ -53,10 +53,10 @@ cources.remove('Math')
 #pop() returns the value it removes, so we can grab that returned value
 popped = cources.pop()
 print(popped)
-
+    
 
 ##Sorting Lists
-#If we wanted to sort our lists, we could do so with the help of reverse()
+#If we wanted to reverse our lists, we could do so with the help of reverse()
 cources.reverse()
 print(cources)
 
@@ -91,4 +91,37 @@ print(nums_sorted)
 print(min(nums))
 print(max(nums))
 print(sum(nums))
+
+
+##Finding values
+#If we wanted to find index of a certian value, we could use the index() method
+print(cources.index('CompSci'))
+
+#If we try to find index for a value, that doesn't exist, we get a ValueError
+#print(cources.index('French'))
+
+#If we only wanted a Yes or No, about whether a value exists in the list or not, we could use 'in' operator
+print('French' in cources)
+
+
+##Looping Values
+#For loop
+for item in cources:
+    print(item)
+
+#Note - Indentation is important in python, this basically says the code is executed within the loop
+#be default, this would print each item in a new line, as print statement goes to a new line each time it is executed.
+
+#We can call the item variable as whatever we want
+for cource in cources:
+    print(cource)
+
+#Sometimes we might need the index along with the value itself. 
+#In python, we can access the index and the value using  the enumerate function
+for index,cource in enumerate(cources):
+    print(cource, index)
+
+#If we dont want the list to be 0-indexed, we can pass a start value in the enumerate function
+for index,cource in enumerate(cources, start = 1):
+    print(cource, index)
 
