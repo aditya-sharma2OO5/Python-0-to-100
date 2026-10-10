@@ -22,7 +22,6 @@ print(cources[-1])
 #This prints the last item in the list, this is the preferred method to access the last item in our list,
 #as we don't have to worry about changing list length.
 
-
 ##List Methods
 # 1.Append() - used to insert a value at the end of the list.
 cources.append('Art')
@@ -54,7 +53,6 @@ cources.remove('Math')
 popped = cources.pop()
 print(popped)
     
-
 ##Sorting Lists
 #If we wanted to reverse our lists, we could do so with the help of reverse()
 cources.reverse()
@@ -92,7 +90,6 @@ print(min(nums))
 print(max(nums))
 print(sum(nums))
 
-
 ##Finding values
 #If we wanted to find index of a certian value, we could use the index() method
 print(cources.index('CompSci'))
@@ -102,7 +99,6 @@ print(cources.index('CompSci'))
 
 #If we only wanted a Yes or No, about whether a value exists in the list or not, we could use 'in' operator
 print('French' in cources)
-
 
 ##Looping Values
 #For loop
@@ -125,3 +121,14 @@ for index,cource in enumerate(cources):
 for index,cource in enumerate(cources, start = 1):
     print(cource, index)
 
+#List into Strings
+#It's pretty common to turn our lists into strings seperated by a certain value.
+#We can do this using a string method called join()
+cource_str = ', '.join(cources)
+print(cource_str)
+#The ', ' before join() is used to tell programming languages we want our string values seperated by a comma(,) and space.
+
+#Splitting Values
+#We can also do the reverse, turn strings back to list. We can do this by splitting our string on a certain value.
+new_list = cource_str.split(' - ')
+print(new_list)
