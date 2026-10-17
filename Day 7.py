@@ -118,3 +118,30 @@ student_info('Math', 'Art', name = 'John', age = 32)
 
 # args are a tuple filled with all our positional arguments.
 # kwargs are a dictionary filled with all our keyword arguments.
+
+
+##Unpacking
+# Sometimes, you might see function calles with the * or **, which is used for unpacking a sequence or dictionary and pass the values into function individually.
+cources = ['Math', 'Art']
+info = {'name' : 'John', 'age' : 32}
+
+# use * for positional arguments and ** for keyword arguments,
+student_info(*cources, **info)
+
+
+##Doc Strings
+# Doc Strings or documentation strings are strings used to explain what a module, function, class or method does. It's a good practice to use doc strings so code becomes easier to understand for any other developers and your future self.
+# commonly written using triple quotes (""""  ...  """") or ('''  ...  ''') immediately after definition of a function, class or module.
+# A single-quoted ('...') or double-quoted ("...") string can also be a docstring, provided it is the first statement in the function, class, or module body. However, triple quotes are the recommended convention.
+def is_leap(year):
+    """Return True for leap years, False for non-leap years"""
+
+    return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
+
+# Doc strings are accessible at runtime using __doc__ 
+# Python stores a function's doc string in it's __doc__ attribute.
+print(is_leap.__doc__)
+
+# Note - A docstring must be the first statement in the function, class, or module body to be recognized as a docstring.
+# You can use 1 pair or 3 pairs of single or double quotation marks. Using 2 pairs of quotation marks(''text'' or ""text"") is inavlid syntax.
+# Python interprets the first two double quotes ("") as an empty string. The word text is then outside the string, followed by another empty string (""). These parts do not form a valid Python expression, so Python raises a SyntaxError.
