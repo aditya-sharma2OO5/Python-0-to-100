@@ -1,0 +1,6 @@
+# Ignore Python bytecode cache directories
+__pycache__/
+
+# Ignore compiled Python bytecode files
+# * matches any filename prefix, .py matches the literal characters (.py) and [cod] matches exactly one character that is either c, o or d.
+*.py[cod]
