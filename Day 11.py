@@ -110,3 +110,18 @@ my_dict2 = {name : hero for name, hero in zip(names, heroes)}
 print(my_dict2)
 
 # Easy to add restrictions onto the ends of these comprehensions.
+# Let's say we don't want Peter added in the list.
+my_dict3 = {name : hero for name, hero in zip(names, heroes) if name != 'Peter'}
+print(my_dict3)
+
+
+##Set Comprehension
+nums = [1, 1, 2, 1, 3, 4, 3, 4, 5, 5, 6, 7, 8, 7, 9, 9]
+my_set = set()
+for n in nums:
+    my_set.add(n)
+print(my_set)
+
+# Now let's how we can do the same with set comprehension.
+my_set2 = {n for n in nums}
+print(my_set2)
