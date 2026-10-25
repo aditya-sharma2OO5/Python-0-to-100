@@ -40,7 +40,7 @@ print(emp_2.email)
 
 # Doing this manually for every employee is a hassle. We can set this info for each employee when they are created rather than doing this manually.
 # If we do this manually, we don't get any benefit of using classes.
-# To set this up automatically, when we create the employee, we are going to use a special method called __init__(). We can think if this as an initializer or a constructor.
+# To set this up automatically, when we create the employee, we are going to use a special method called __init__(). __init__ initializes the instance after it has been created.
 class Employee:
     def __init__(self, first, last, pay):       # When we create methods within a class, they receive the instance as the first argument. We should call this instance self
         self.first = first                      # This is the same as emp_1.first = 'Test'.   
@@ -71,6 +71,9 @@ class Employee:
     def fullname(self):
         return f'{self.first} {self.last}'
 
+# When we redefine the Employee class, Python creates a new class object and makes the name Employee refer to this new class.
+# However, existing instances created from the previous class definition remain instances of the old class.
+# Since the old class does not have the fullname() method, calling emp_3.fullname() raises an AttributeError.
+# To fix this, we need to create emp_3 again after redefining the Employee class so that it becomes an instance of the new class, which contains the fullname() method.
 emp_3 = Employee('Test@@', '12345', 65000)
 print(emp_3.fullname())
-
