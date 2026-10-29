@@ -50,3 +50,52 @@ print(dev_1.pay)
 
 # Sometimes we want to initiate our sub class with more info than our parent class can handle.
 # Let's say we want to pass programming lang as an attribute.
+class Developer(Employee):
+    raise_amount = 1.10
+
+    def __init__(self, first, last, pay, prog_lang):       
+            super().__init__(first, last, pay)      # This passes first. last and pay to the Parent Class init method.
+            self.prog_lang = prog_lang
+
+
+dev_1 = Developer('Test', '123', 50000, 'Python')
+dev_2 = Developer('Test@', '1234', 60000, 'C++')
+
+# Create another sub class 'manager'
+class Manager(Employee):
+    def __init__(self, first, last, pay, employees = None):      # Never pass mutable data types like list or dict as default args. Hence we passed None 
+        super().__init__(first, last, pay)
+        if employees is None:
+            self.employees = []
+        else:
+            self.employees = employees
+ 
+    def add_employee(self, emp):
+        if emp not in self.employees:
+            self.employees.append(emp)
+
+    def remove_employee(self, emp):
+        if emp in self.employees:
+            self.employees.remove(emp)
+
+    def print_emps(self):
+        for emp in self.employees:
+            print('-->', emp.fullname())
+
+dev_1 = Developer('Test', '123', 50000, 'Python')
+dev_2 = Developer('Test@', '1234', 60000, 'C++')
+
+mgr_1 = Manager('Test', '123', 45000, [dev_1])
+
+mgr_1.add_employee(dev_2)
+mgr_1.print_emps()
+
+
+##isinstance() and issubclass()
+# There 2 built-in Python functions that are useful to know for inheritance.
+# Tells us if an obj is an instance of a class.
+print(isinstance(mgr_1, Manager))       # Is mgr_1 a instance of the Manager Class
+print(isinstance(mgr_1, Developer))
+
+# Tells us if a class is a subclass of another.
+print(issubclass(Developer, Employee))  # Is Developer a subclass of Employee
